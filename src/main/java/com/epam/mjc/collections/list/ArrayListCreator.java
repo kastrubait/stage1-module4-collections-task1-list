@@ -16,7 +16,7 @@ public class ArrayListCreator {
 
         for (int i = 0; i < sizeList; ++i) {
 
-            String word = sourceList.get(i);
+            String word = sourceList.get(i + 1);
             wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
 
             if ((i + 1) % 3 == 0) {

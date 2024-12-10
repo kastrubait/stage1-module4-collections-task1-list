@@ -14,7 +14,7 @@ public class ArrayListCreator {
 
         Map<String, Integer> wordCount = new HashMap<>();
 
-        for (int i = 1; i <= sizeList; ++i) {
+        for (int i = 0; i < sizeList; ++i) {
 
             String word = sourceList.get(i);
             wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);

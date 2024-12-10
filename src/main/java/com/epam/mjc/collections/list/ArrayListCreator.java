@@ -2,6 +2,8 @@ package com.epam.mjc.collections.list;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ArrayListCreator {
     public ArrayList<String> createArrayList(List<String> sourceList) {
@@ -10,10 +12,17 @@ public class ArrayListCreator {
 
         ArrayList<String>  arrayList = new ArrayList<>();
 
+        Map<String, Integer> wordCount = new HashMap<>();
+
         for (int i = 1; i <= sizeList; ++i) {
-            if (i % 3 == 0) {
-                arrayList.add(sourceList.get(i));
-                arrayList.add(sourceList.get(i));
+
+            String word = sourceList.get(i);
+            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+
+            if ((i + 1) % 3 == 0) {
+                if (wordCount.get(word) > 1) {
+                    arrayList.add(word);
+                }
             }
         }
         return arrayList;
